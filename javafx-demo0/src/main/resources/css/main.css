@@ -1,0 +1,90 @@
+#pane{
+    -fx-background-color: #e9c5ff;
+    -fx-image: url("images/account.png");
+}
+
+#button {
+
+    -fx-background-image: url("images/account.png");
+}
+
+
+#quit{
+    -fx-background-image: url("images/quit.png");
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: rgba(255,255,255,0);
+    -fx-cursor: hand;
+
+}
+#quit:hover
+{
+    -fx-background-image: url("images/quit.png");
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-border-radius: 100px;
+    -fx-background-color: rgba(200,200,200,100);
+    -fx-cursor: hand;
+}
+#quit:pressed
+{
+    -fx-background-image: url("images/quit.png");
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: rgba(255,255,255,0);
+    -fx-cursor: hand;
+}
+
+
+#Anchor{
+    -fx-background-color: #e9c5ff;
+    -fx-background-image: url("images/ave.jpg");
+
+
+    -fx-background-position: center center;
+    -fx-fill-width: 100%, 100%;
+    -fx-background-size: 100%, 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-cursor: hand;
+}
+#field{
+    -fx-background-image: url("images/search.png");
+    -fx-background-position: center center;
+
+    -fx-background-repeat: no-repeat;
+}
+#UserName{
+    -fx-background-radius: 20px;
+    -fx-background-color: white;
+    -fx-border-radius: 20px;
+    -fx-border-color: rgb(200,200,200);
+}
+#UserName{
+    -fx-background-image: url("Images/account.png");
+    -fx-background-repeat: no-repeat;
+
+    -fx-background-position: 8px center;
+}
+
+#Anchor{
+    -fx-background-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-border-color: rgb(180,180,180);
+    -fx-background-color: white;
+}
+#UserName:hover{
+     -fx-background-radius: 20px;
+     -fx-background-color: white;
+     -fx-border-radius: 20px;
+     -fx-border-color: rgb(160,160,160);
+ }
+
+#UserName:focused {
+
+    -fx-background-radius: 20px;
+    -fx-background-color: white;
+    -fx-border-radius: 20px;
+    -fx-border-color: rgb(160,160,160);
+
+}

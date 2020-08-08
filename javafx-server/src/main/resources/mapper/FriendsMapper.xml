@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hbr.weChat.mapper.FriendsMapper">
+
+    <resultMap id="base" type="com.hbr.weChat.model.Friends">
+        <id column="fid" property="id"/>
+        <result property="ownAccount" column="own_account"/>
+    </resultMap>
+    <resultMap id="friends" type="com.hbr.weChat.model.Friends" extends="base">
+        <collection property="user" ofType="com.hbr.weChat.model.User">
+            <id column="aid" property="id"/>
+<!--            id, account, password, name, age, sex, head, address, label, phone, background, status-->
+            <result property="account" column="account"/>
+            <result property="name" column="name"/>
+            <result property="age" column="age"/>
+            <result property="sex" column="sex"/>
+            <result property="head" column="head"/>
+            <result property="address" column="address"/>
+            <result property="label" column="label"/>
+            <result property="phone" column="phone"/>
+            <result property="background" column="background"/>
+            <result property="status" column="status"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="select" resultMap="friends">
+        select f.id fid, a.id aid, a.account, a.password, a.name, a.age, a.sex,
+                a.head, a.address, a.label, a.phone, a.background, a.status
+        from user_friends f left join user_account a
+        on f.others_account=a.account
+        where f.own_account=#{account}
+    </select>
+</mapper>

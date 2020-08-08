@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hbr.weChat.mapper.UserMapper">
+    <insert id="addUser">
+        insert into user_account
+        (`account`, `password`, `name`, `age`, `sex`, `head`, `status`)
+        values
+        (#{account}, #{password}, #{name}, #{age}, #{sex}, #{head}, #{status})
+    </insert>
+    <update id="updateStatus">
+        update user_account
+        set status=#{status}
+        where account=#{account}
+    </update>
+
+    <select id="select" resultType="com.hbr.weChat.model.User">
+        select * from user_account
+        where user_account.account = #{account}
+        and user_account.password = #{password}
+    </select>
+</mapper>
